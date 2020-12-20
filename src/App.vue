@@ -1,24 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div style="width: 500px; margin: 0 auto;">
+      <div>number-input（整型）的输入值： {{ inputValue }}</div>
+      <number-input v-model="inputValue" size="small" />
+      <div>number-input（带小数点）的输入值： {{ remainValue }}</div>
+      <number-input v-model="remainValue" remain="2" size="small" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'app',
+  data() {
+    return {
+      inputValue: '',
+      remainValue: ''
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
